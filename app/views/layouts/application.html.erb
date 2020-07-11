@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+   <title> <%= yield(:title) %> | Agri Foods</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+<!--Turbolinks go here-->
+  <%= stylesheet_link_tag 'application', media: 'all' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+   <header class="headSec">
+      <h1>Agri Foods</h1>
+			  <!--<a href="about.html"><img src="icons/logo text.png" width="300" height="65" alt=""></a>-->
+
+      </div>
+      <ul>
+        <li><%= link_to "Home",  "/" %></li>
+        <li><%= link_to "About", about_path %></li>
+        <li><%= link_to "Contact", contact_path %></li>
+
+        
+      </ul>
+      
+      
+    </header>
+
+    <div class="container">
+    <%= yield %>
+    </div>
+
+<footer class="foot">
+<h1></h1>
+<div class="footer-text-p1">
+<div class="footer-box-left">
+  <p>MAIN MENU</p>
+  <p>Home</p>
+  <p>About</p>
+  <p>Contact</p>
+</div>
+</div>
+<div class="footer-text-p2">
+<div class="footer-box-middle">
+  <p>COMPANY</p>
+  <p>Our Story</p>
+  <p>Work for us</p>
+</div>
+</div>
+<div class="footer-text-p3">
+  <div class="footer-box-left">
+  <p>FIND US ON</p>
+  <p>Facebook</p>
+  <p>Twitter</p>
+  <p>Instagram</p>
+  </div>
+</div>
+</footer>
+  </body>
+</html>
