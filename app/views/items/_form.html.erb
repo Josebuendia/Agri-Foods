@@ -1,3 +1,4 @@
+<div class="mainCont">
 <%= form_with(model: item, local: true) do |form| %>
   <% if item.errors.any? %>
     <div id="error_explanation">
@@ -13,45 +14,46 @@
 
   <div class="field">
     <%= form.label :title %>
-    <%= form.text_field :title %>
+    <%= form.text_field :title, id: :item_titl, :type =>"text"%>
   </div>
 
   <div class="field">
     <%= form.label :description %>
-    <%= form.text_area :description %>
+    <%= form.text_area :description, id: :item_description, :type =>"text" %>
   </div>
 
   <div class="field">
     <%= form.label :price %>
-    <%= form.text_field :price %>
+    <%= form.text_field :price, id: :item_price, :type =>"text" %>
   </div>
 
   <div class="field">
     <%= form.label :image_url %>
-    <%= form.text_field :image_url %>
+    <%= form.text_field :image_url, id: :item_image_url %>
   </div>
 
   <div class="field">
     <%= form.label :shelf_life %>
-    <%= form.text_field :shelf_life %>
+    <%= form.text_field :shelf_life,  id: :item_shelf_life, :type =>"text" %>
   </div>
 
   <div class="field">
     <%= form.label :category %>
-    <%= form.text_field :category %>
+    <%= form.text_field :category,  id: :item_category, :type =>"text" %>
   </div>
 
   <div class="field">
     <%= form.label :county %>
-    <%= form.text_field :county %>
+    <%= form.text_field :county,  id: :item_county, :type =>"text" %>
   </div>
 
   <div class="field">
     <%= form.label :farm %>
-    <%= form.text_field :farm %>
+    <%= form.text_field :farm,  id: :farm, :type =>"text" %>
   </div>
 
   <div class="actions">
     <%= form.submit %>
   </div>
 <% end %>
+</div>

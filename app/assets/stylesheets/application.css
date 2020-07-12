@@ -22,8 +22,7 @@
         background-color: #b3e0ff;
         width: 100%;
         margin-bottom:10px;
-        overflow: auto;
-       
+        overflow: auto;    
        
     
 }
@@ -81,29 +80,30 @@ li a {
 }
 
 /*footer*/
-footer-text-p1{
+/*footer-text-p1{
     text-align: left;
-}
+}*/
 
 footer-box-left{
-    display: inline-block
+    float: left;
+    padding-right: 40%;
 }
 
-footer-text-p2{
-    text-align: middle;
-}
+/*footer-text-p2{
+    float: left;
+}*/
 
 footer-box-middle{
-    display: inline-block
+    float: right ;
 }
 
 
-footer-text-p3{
-    text-align: right;
-}
+/*footer-text-p3{
+    float: right;
+}*/
 
 footer-box-right{
-    display: inline-block
+    float: right
 }
 
 .container {

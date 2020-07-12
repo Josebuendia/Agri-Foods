@@ -5,6 +5,8 @@ root 'static_pages#home'
 
   get '/about' => 'static_pages#about'
 
+  get '/login' => 'user#login'
+  get '/logout' => 'user#logout'
   #get 'static_pages/home'
   #get 'static_pages/contact'
   #get 'static_pages/about'
