@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   get 'orderitems/show'
   get 'orderitems/new'
   get 'orderitems/edit'
-  
+
   resources :orders do 
     resources:orderitems
   end
@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   end  
 
   get '/checkout' => 'cart#createOrder'
+  get '/paid/:id' => 'static_pages#paid'
 
   get 'cart/index'
   resources :items
