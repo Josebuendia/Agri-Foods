@@ -85,7 +85,7 @@ li a {
 }*/
 
 footer-box-left{
-    float: left;
+    float: right;
     padding-right: 40%;
 }
 
@@ -213,3 +213,40 @@ display: inline-block
    input[type=submit]:hover {
     background-color: grey;
    }
+
+   #customers {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+   }
+   #customers td, #customers th {
+    border: 1px solid #ddd;
+    padding: 8px;
+   }
+   #customers tr:nth-child(even){background-color: #f2f2f2;}
+   #customers tr:hover {background-color: #ddd;}
+   #customers th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+   /* background-color: #4CAF50;*/
+    color: white;
+   }
+
+   /*
+* This is a manifest file that'll be compiled into application.css, which will include all the files
+* listed below.
+*
+* require_tree .
+*= require cart
+*= require_self
+*/
+
+/*cart heading*/
+.EmptyCartNotice{
+    text-align: center;
+}
+
+.EmptyCartNoticeInnerDiv{
+display: inline-block;
+}
