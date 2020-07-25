@@ -108,7 +108,7 @@ footer-box-right{
 }
 
 .container {
-        background: url("/assets/Site/clubhead.png");
+      /*  background: url("/assets/Site/.png");*/
          background-repeat:no-repeat;
          background-position:right bottom;
          width: 100%;

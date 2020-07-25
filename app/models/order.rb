@@ -4,8 +4,9 @@ class Order < ApplicationRecord
     params.require(:order).permit( :order_date, :user_id, :status)
   end
 
-
-  has_many :orderitems
+#:dependent => :destroy <--put this in to deal with ActiveRecord::InvalidForeignKey: 
+#SQLite3::ConstraintException: FOREIGN KEY constraint failed
+  has_many :orderitems, :dependent => :destroy
   belongs_to :user
 
 end
