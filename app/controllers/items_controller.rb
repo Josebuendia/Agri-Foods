@@ -7,6 +7,11 @@ class ItemsController < ApplicationController
     @items = Item.all
   end
 
+  def search
+    st = "%#{params[:q]}%"
+    @items = Item.where("title like ?", st)
+  end
+
   # GET /items/1
   # GET /items/1.json
   def show
