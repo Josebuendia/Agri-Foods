@@ -1,12 +1,11 @@
 class StaticPagesController < ApplicationController
-   %>
-code to comment
+  
+#code to comment
   def home
-    @categories = Category.all
+   # @categories = Category.all
     @items = Item.all
   end
-  <% 
-  =end %>
+  
   def help
   end
 
