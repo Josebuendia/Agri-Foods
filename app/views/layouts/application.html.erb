@@ -34,10 +34,12 @@
 
 
         <% if session[:login] == 1 %> 
-        <li><%= link_to "Admin Logout", logout_path %></li>
+                        <!--Changed  this to selller login  from "Admin Login"-->
+        <li><%= link_to "Seller Logout", logout_path %></li>
         <% else %>
-        
-        <li><%= link_to "Admin Login", login_path %></li>
+                <!--Changed  this to selller login  from "Admin Login"-->
+
+        <li><%= link_to "Seller Login", login_path %></li>
         <% end %>
 
 
