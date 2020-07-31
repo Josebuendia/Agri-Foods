@@ -5,7 +5,19 @@
 
  <% @users.each do |user| %>
  <div class="itemhols">
- <h1><%= user.email %></h1>
+
+ <h1><%= user.email %></h1> 
+
+
+  <h2><%= user.farm_name %></h2>
+ <p><%= user.farmers_picture %></p>
+<p><%= user.about_farm %></p>
+<p><%= user.farm_type %></p>
+<p><%= user.county %></p> 
+
+
+
+
 </div>
  <% end %>
 </div>

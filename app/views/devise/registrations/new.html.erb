@@ -26,6 +26,38 @@
   <%= f.check_box :role, {:class => "myclass", :style => "mystyle"}, "1", "2" %>
 </div>
 
+<%
+=begin%>
+ <--- TODO form input fields for farm name, 2 farm picture, 3 info 4 about farm, 5 farm type, and 6county --->  
+<%
+=end%>
+
+   <div class="field">
+<%= f.label :farm_name %> 
+ <%= f.text_field :farm_name %>
+</div>
+
+   <div class="field">
+<%= f.label :farm_image_url %> 
+ <%= f.text_field :farmers_picture %>
+</div>
+
+   <div class="field">
+<%= f.label :about %> 
+ <%= f.text_field :about_farm %>
+</div>
+
+   <div class="field">
+<%= f.label :farm_type %> 
+ <%= f.text_field :farm_type %>
+</div>
+
+   <div class="field">
+<%= f.label :county %> 
+ <%= f.text_field :county %>
+</div>
+
+
   <div class="actions">
     <%= f.submit "Sign up" %>
   </div>
