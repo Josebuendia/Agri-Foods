@@ -8,7 +8,9 @@ Rails.application.routes.draw do
     resources:orderitems
   end
 
-  devise_for :users do 
+  devise_for :users, controller: {
+    registrations: 'users/registerations'
+  } do 
     resources :orders 
   end  
 
