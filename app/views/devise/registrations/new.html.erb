@@ -21,6 +21,11 @@
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
   </div>
 
+<div class="field">
+  <%= f.label :Tick_if_you_are_a_farmer %><br />
+  <%= f.check_box :role, {:class => "myclass", :style => "mystyle"}, "1", "2" %>
+</div>
+
   <div class="actions">
     <%= f.submit "Sign up" %>
   </div>

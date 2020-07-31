@@ -20,12 +20,15 @@ Rails.application.routes.draw do
   resources :items
 root 'static_pages#home'
   get '/contact' => 'static_pages#contact'
+  get '/aboutSend/:id' =>  'static_pages#aboutSend'
 
   get '/about' => 'static_pages#about'
 
   get '/login' => 'user#login'
   get '/logout' => 'user#logout'
 
+  #new route
+  get '/farmers' => 'user#farmers'
 
   get '/cart/clear', to: 'cart#clearCart'
   get '/cart', to: 'cart#index'

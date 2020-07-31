@@ -24,5 +24,10 @@ class StaticPagesController < ApplicationController
     @items = Item.where("category like ?", catName)
   end
 
+  def aboutSend
+    @order = Order.find(params[:id])
+    @order.update_attribute(:status, "paid with paypal")
+  end
+
 
 end

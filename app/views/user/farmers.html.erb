@@ -1,0 +1,11 @@
+<p id="notice"><%= notice %></p>
+<div id="itemsContainer">
+
+ <h1>Our Farmers</h1>
+
+ <% @users.each do |user| %>
+ <div class="itemhols">
+ <h1><%= user.email %></h1>
+</div>
+ <% end %>
+</div>

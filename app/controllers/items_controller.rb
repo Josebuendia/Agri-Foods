@@ -29,11 +29,12 @@ class ItemsController < ApplicationController
   # POST /items
   # POST /items.json
   def create
-    @item = Item.new(item_params)
+    #changed @item = Item.new(item_params) to Item.create_with(user: current_user).new(item_params) (&& item.save getting rid of this made it work)
+    @item = Item.create_with(user: current_user).new(item_params) 
 
     respond_to do |format|
       if @item.save
-        format.html { redirect_to @item, notice: 'Item was successfully created.' }
+        format.html { redirect_to @item, notice: 'Item was successfully created.'}
         format.json { render :show, status: :created, location: @item }
       else
         format.html { render :new }
