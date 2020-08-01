@@ -37,6 +37,7 @@ root 'static_pages#home'
   get '/logout' => 'user#logout'
 
   #new route
+
   get '/farmers' => 'user#farmers'
 
   get '/cart/clear', to: 'cart#clearCart'
@@ -46,9 +47,8 @@ root 'static_pages#home'
   get '/cart/remove/:id' => 'cart#remove'
 
   get '/cart/decrease/:id' => 'cart#decrease'
+
   #root :to => 'site#home'
-  #get 'static_pages/home'
-  #get 'static_pages/contact'
-  #get 'static_pages/about'
+
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
