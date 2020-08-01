@@ -1,3 +1,10 @@
 // Place all the styles related to the StaticPages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+button:hover {
+   // background-color: #0a0215 /*#808080*/;
+    //color: #ffa500;
+    transform: scale(1.1);
+    transition: all .2s ease-in-out;
+    //border-color: #ffa500;
+  }

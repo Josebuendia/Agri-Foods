@@ -4,10 +4,10 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-         def user_params
-          params.require(:user).permit(:email, :password, :password_confirmation, :remember_me, :role, 
-            :farm_name, :farmers_picture, :about_farm, :farm_type, :county)
-         end
+        #  def user_params
+        #   params.require(:user).permit(:email, :password, :password_confirmation, :remember_me, :role, 
+        #     :farm_name, :farmers_picture, :about_farm, :farm_type, :county)
+        #  end
     
      has_many :orders
      has_many :item

@@ -8,11 +8,18 @@ Rails.application.routes.draw do
     resources:orderitems
   end
 
-  devise_for :users, controller: {
-    registrations: 'users/registerations'
-  } do 
-    resources :orders 
-  end  
+  # devise_for :users, controller: {
+  #   registrations: 'users/registrations'
+  # } do 
+  #   resources :orders 
+  # end  
+
+  devise_for :users, controllers: {
+    registrations: 'users/registrations'  
+    
+    } 
+
+  
 
   get '/checkout' => 'cart#createOrder'
   get '/paid/:id' => 'static_pages#paid'

@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
 class Users::RegistrationsController < Devise::RegistrationsController
-  # before_action :configure_sign_up_params, only: [:create]
-  # before_action :configure_account_update_params, only: [:update]
+   before_action :configure_sign_up_params, only: [:create]
+   #before_action :configure_account_update_params, only: [:update]
 
   # GET /resource/sign_up
   # def new
@@ -12,20 +12,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
    #POST /resource
    def create
      super
-  #user.saver
-  user.save(user_params) do |user|
-   # @user = User.new(user_params)   
+
+   end
   
-    respond_to do |format|   
-      if @user.save   
-        format.json { render :show, status: :created, location: @user }   
-      else   
-        format.html { render :new }   
-        format.json { render json: @user.errors, status: :unprocessable_entity }   
-      end   
-    end   
-   end
-   end
 
   # GET /resource/edit
   # def edit
@@ -53,9 +42,16 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # protected
 
-  # If you have extra params to permit, append them to the sanitizer.
-  # def configure_sign_up_params
-  #   devise_parameter_sanitizer.permit(:sign_up, keys: [:attribute])
+  # If you have extra params to permit, append them to the sanitizer. 
+   def configure_sign_up_params
+    devise_parameter_sanitizer.permit(:sign_up, keys: [
+      :email, :password, :password_confirmation, :remember_me, :role, :farm_name, :farmers_picture, :about_farm, :farm_type, :county])
+   # params.require(:user).permit(:email, :password, :password_confirmation, :remember_me)
+   end
+
+  # def user_params
+  #   params.require(:user).permit(:role, :farm_name, :farmers_picture, :about_farm, :farm_type, :county)
+  # end
   # end
 
   # If you have extra params to permit, append them to the sanitizer.
