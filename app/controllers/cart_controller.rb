@@ -1,16 +1,16 @@
 class CartController < ApplicationController
   before_action :authenticate_user!
   def remove
-    
+
     id = params[:id]
     cart = session[:cart]
     cart.delete id
-    
+
     redirect_to :root
   end
-  
+
   def decrease
-    
+
     id = params[:id]
     cart = session[:cart]
     if cart[id] == 1 then
@@ -20,7 +20,7 @@ class CartController < ApplicationController
     end
      #Taking us to cart index[view] page
     redirect_to :action => :index
-    
+
   end
 
 
@@ -33,8 +33,8 @@ class CartController < ApplicationController
   def add
     # get the Id of the product
     id = params[:id]
-    
-   # if the cart is already been created, use existing cart else create a blank cart
+
+    # if the cart is already been created, use existing cart else create a blank cart
   if session[:cart] then
     cart = session[:cart]
   else
@@ -46,10 +46,10 @@ class CartController < ApplicationController
     cart[id] = cart[id] + 1
   else
     cart[id]= 1
-  end  
-  
+  end
+
     redirect_to :action => :index
-  
+
   end
   def index
     # passes a cart to display
@@ -57,17 +57,17 @@ class CartController < ApplicationController
       @cart = session[:cart]
     else
       @cart = {}
-    end  
+    end
   end
-  
+
   def createOrder
    # Step 1: Get the current user
    @user = User.find(current_user.id)
-  
+
    # Step 2: Create a new order and associate it with the current user
    @order = @user.orders.build(:order_date => DateTime.now, :status => 'Pending')
    @order.save
-  
+
    # Step 3: For each item in the cart, create a new item on the order!!
    @cart = session[:cart] || {} # Get the content of the Cart
    @cart.each do | id, quantity |
