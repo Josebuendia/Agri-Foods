@@ -6,7 +6,7 @@ class UserController < ApplicationController
         flash[:notice] = "Seller Login sucessfull!"
         redirect_to :controller => :items
         end
-       
+
     def logout
         session[:login] = nil
         session[:cart] = nil
