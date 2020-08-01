@@ -9,11 +9,23 @@ class Users::RegistrationsController < Devise::RegistrationsController
   #   super
   # end
 
-  # POST /resource
-  # def create
-  #   super
+   #POST /resource
+   def create
+     super
   #user.saver
-  # end
+  user.save(user_params) do |user|
+   # @user = User.new(user_params)   
+  
+    respond_to do |format|   
+      if @user.save   
+        format.json { render :show, status: :created, location: @user }   
+      else   
+        format.html { render :new }   
+        format.json { render json: @user.errors, status: :unprocessable_entity }   
+      end   
+    end   
+   end
+   end
 
   # GET /resource/edit
   # def edit

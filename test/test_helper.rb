@@ -17,9 +17,9 @@ class ActiveSupport::TestCase
      if integration _ test? 
    #use warden helper 
     login_as(user, :scope => :user)
-   else #controller test, model test 18 
+     else #controller test, model test 18 
     #use devise helper 
     sign_(user) 
-    end
+     end
    end  
 end
