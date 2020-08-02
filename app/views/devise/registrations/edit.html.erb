@@ -26,10 +26,37 @@
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
   </div>
 
+
   <div class="field">
     <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
     <%= f.password_field :current_password, autocomplete: "current-password" %>
   </div>
+
+    <div class="field">
+<%= f.label :farm_name %> 
+ <%= f.text_field :farm_name %>
+</div>
+
+   <div class="field">
+<%= f.label :farm_image_url %> 
+ <%= f.text_field :farmers_picture %>
+</div>
+
+   <div class="field">
+<%= f.label :about %> 
+ <%= f.text_field :about_farm %>
+</div>
+
+   <div class="field">
+<%= f.label :farm_type %> 
+ <%= f.text_field :farm_type %>
+</div>
+
+   <div class="field">
+<%= f.label :county %> 
+ <%= f.text_field :county %>
+</div>
+
 
   <div class="actions">
     <%= f.submit "Update" %>

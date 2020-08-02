@@ -24,19 +24,6 @@
  <%= link_to 'Show', user, :class => "button", :role => "button" %> 
 <%
 =end%>
-
-
- <% if session[:login] == 1 %> 
-        <%
-=begin%>
- <%= link_to 'Edit', edit_item_path(item), :class =>"button", :role=>"button" %>
-        <%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' }, :class =>"button", :role=>"button" %> 
-<%
-=end%>
-        
-        <% end %>
-
-
 </div>
  <% end %>
 </div>
