@@ -34,8 +34,17 @@
           <% end %>
 
 
-        <% if session[:login] == 1 %> 
-                        <!--Changed  this to selller login  from "Admin Login"-->
+
+ <% if session[:login] == 1 %>  
+
+
+ <%
+=begin%>
+ <% if session[:login] == (role: 1)%>  
+<%
+=end%>
+
+                        <!---Changed  this to seller login  from "Admin Login"-->
         <li><%= link_to "Seller Logout", logout_path %></li>
         <% else %>
                 <!--Changed  this to selller login  from "Admin Login"-->

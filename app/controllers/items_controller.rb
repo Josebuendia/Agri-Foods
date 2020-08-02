@@ -60,10 +60,17 @@ class ItemsController < ApplicationController
   # DELETE /items/1
   # DELETE /items/1.json
   def destroy
+    #@item = item.find(params[:id])
+        #authorize @item
+     #   if
     @item.destroy
     respond_to do |format|
       format.html { redirect_to items_url, notice: 'Item was successfully destroyed.' }
       format.json { head :no_content }
+   # else
+      #flash.now[:alert] = "There was an error deleting the wiki."
+     # render :show
+    #end
     end
   end
 
