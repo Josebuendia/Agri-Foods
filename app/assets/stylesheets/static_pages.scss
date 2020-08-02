@@ -22,7 +22,7 @@
     margin-right: 200px;*/
  }
 
-  .greyShadow input, textarea {
+  .greyShadow input{/*textarea*/ 
     border: 7% solid #ccc; /* Gray border */
     border-radius: 3%; /* Rounded borders */
     width: 100%;
@@ -31,10 +31,10 @@
   }
 
 
-  .greyShadow textarea {
+  /*.greyShadow textarea {
     border: 7% solid #ccc; /* Gray border */
-    border-radius: 3%; /* Rounded borders */
-    width: 50%;
-    height: 100%;
-    padding: 4%;
-  }
+  //  border-radius: 3%; /* Rounded borders */
+   // width: 50%;
+  // height: 100%;
+   // padding: 4%;
+ // }

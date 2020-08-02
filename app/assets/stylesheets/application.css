@@ -192,7 +192,7 @@ display: inline-block
    }
 
    /*form*/
-   input[type=text], select {
+   input[type=text],[type=textarea], select {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
