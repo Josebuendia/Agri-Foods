@@ -28,6 +28,7 @@ class ItemsController < ApplicationController
   # GET /items/1/edit
   def edit
    # @items = current_user.item.find(params[:id])
+   #@items = current_user.item
     #@items = current_user.items.find_by_user_id(params[:id])
   #else
 

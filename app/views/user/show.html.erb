@@ -1,8 +1,8 @@
 <p id="notice"><%= notice %></p>
 <div id="itemsContainer">
- <h1><%= @item.title %></h1>
- <%= image_tag @item.image_url, :class => 'welcomIm' %>
- <h2><%= @item.description %></h1>
+ <h1><%= @user.farm_name  %></h1>
+<%= image_tag user.farmers_picture if user.farmers_picture.present? :class => 'welcomIm' %>
+<p><%= user.about_farm %></p>
 
  <div class="itemhols">
  <p>Price <%= number_to_currency(@item.price, :unit => "€") %>
@@ -16,7 +16,7 @@
   farm: <%= @item.farm %></p>
  <p>
  <%= link_to 'Back', items_path, :class => "button", :role => "button" %>
- <%= link_to 'Edit', edit_item_path(@item), :class => "button", :role => "button" %>
+        <li><%= link_to 'Back', farmers_path, :class => "button", :role => "button" %>
 
  </p>
 
