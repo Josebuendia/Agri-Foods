@@ -13,6 +13,13 @@
  *= require_tree .
  *= require_self
  */
+
+ @media only screen /*and (max-width: 600px) */{
+     .welcomeIm{
+            width: 10%;
+            height: 20px;
+     }
+ }
  .headSec {
 
         background: url("/assets/Cows_in_a_field.jpg");
@@ -176,6 +183,7 @@ display: inline-block
     margin-left: auto;
     margin-right: auto;
     display: block;
+    /*height: 100%;*/
    
    }
    .button {
