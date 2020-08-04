@@ -32,6 +32,8 @@
     <%= f.password_field :current_password, autocomplete: "current-password" %>
   </div>
 
+        <% if is_farmer? %>
+
     <div class="field">
 <%= f.label :farm_name %> 
  <%= f.text_field :farm_name %>
@@ -57,6 +59,7 @@
  <%= f.text_field :county %>
 </div>
 
+<% end %>
 
   <div class="actions">
     <%= f.submit "Update" %>
