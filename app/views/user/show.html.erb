@@ -1,5 +1,8 @@
 <p id="notice"><%= notice %></p>
 <div id="itemsContainer">
+
+<!--Data to include on farmers: name, pic, about, type, county-->
+
  <h1><%= @user.farm_name  %></h1>
 <%= image_tag user.farmers_picture if user.farmers_picture.present? :class => 'welcomIm' %>
 <p><%= user.about_farm %></p>

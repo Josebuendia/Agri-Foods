@@ -42,6 +42,8 @@ group :development do
   gem 'web-console', '>= 3.3.0'
 end
 
+gem 'rails-erd', group: :development
+
 group :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '>= 2.15'
