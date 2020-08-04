@@ -12,53 +12,60 @@
 
   <body>
    <header class="headSec">
+
       <h1>Agri Foods</h1>
-			  <!--<a href="about.html"><img src="icons/logo text.png" width="300" height="65" alt=""></a>-->
+
+              <!--<a href="about.html"><img src="icons/logo text.png" width="300" height="65" alt=""></a>-->
+
+
 
       </div>
+
       <ul>
+
         <li><%= link_to "Home",  "/" %></li>
+
         <li><%= link_to "About", about_path %></li>
+
         <li><%= link_to "Our Farmers", "/farmers" %></li>
+
         <li><%= link_to "View Items", "/items" %></li>
+
         <li><%= link_to "View Cart", "/cart" %></li>
+
         <li><%= link_to "View Orders", orders_path  %></li>
+
         <li><%= link_to "Contact", contact_path %></li>
-                  <% if user_signed_in? %>
-                  
-                 <li><%= link_to 'Edit Profile', edit_user_registration_path %></li>
-                 <li><%= link_to 'Sign out', destroy_user_session_path, :method => :delete %></li>
-          <% else %>
-                 <li><%= link_to 'Register', new_user_registration_path %></li> 
-                 <li><%= link_to 'Sign in', new_user_session_path %></li>
-          <% end %>
 
+        <% if user_signed_in? %>
 
+          <li><%= link_to 'Edit Profile', edit_user_registration_path %></li>
 
- <% if session[:login] == 1 %>  
+        <% if is_farmer? %>
 
+          <li><%= link_to 'Seller Sign out', destroy_user_session_path, :method => :delete %></li>
 
- <%
-=begin%>
- <% if session[:login] == (role: 1)%>  
-<%
-=end%>
-
-                        <!---Changed  this to seller login  from "Admin Login"-->
-        <li><%= link_to "Seller Logout", logout_path %></li>
         <% else %>
-                <!--Changed  this to selller login  from "Admin Login"-->
 
-        <li><%= link_to "Seller Login", login_path %></li>
+          <li><%= link_to 'Sign out', destroy_user_session_path, :method => :delete %></li>
+
         <% end %>
 
+        <% else %>
 
-        
+            <li><%= link_to 'Register', new_user_registration_path %></li> 
+
+            <li><%= link_to 'Sign in', new_user_session_path %></li>
+
+        <% end %>
+
       </ul>
-      
-      
-    </header>
 
+
+
+
+
+    </header>
     <div class="container">
     <%= yield %>
     <%=render 'layouts/search'%>

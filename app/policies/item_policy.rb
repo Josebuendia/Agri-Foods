@@ -8,13 +8,16 @@ class ItemPolicy < ApplicationPolicy
         @post = post
       end
     
-      def update?
-        #user.admin? or not post.published?
-        User.where(user)
+      def edit?
+        @record.user.eql?(@user)
+      end
+
+      def create?
+        @user.role == 1
       end
 
       def destroy?
-        user.role == 'admin' || record.user == user
+        user.role == 1 || record.user == user
       end
     end
   class Scope < Scope

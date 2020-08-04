@@ -32,4 +32,15 @@ class UserController < ApplicationController
      #   @user = User.find(params[:id])
           # FIXME get the view working for the farmers page
     #end
+
+    def upgrade_admin
+        @user.update_attribute(:adminrole, true)
+        redirect_to :action => :admin_users
+    end
+    
+    def downgrade_admin
+       @user.update_attribute(:adminrole, false)
+         redirect_to :action => :admin_users
+    end    
+
 end

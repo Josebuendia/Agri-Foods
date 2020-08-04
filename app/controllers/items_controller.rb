@@ -1,6 +1,9 @@
 class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :edit, :update, :destroy]
 
+  #after_action :verify_authorized#, except: :index, unless: user_controller?
+    #after_action :verify_policy_scoped#,  only: index
+
   # GET /items
   # GET /items.json
   def index
@@ -24,13 +27,18 @@ class ItemsController < ApplicationController
 
   # GET /items/1/edit
   def edit
+   # @items = current_user.item.find(params[:id])
+    #@items = current_user.items.find_by_user_id(params[:id])
+  #else
+
+     # authorize @item
   end
 
   # POST /items
   # POST /items.json
   def create
     #changed @item = Item.new(item_params) to Item.create_with(user: current_user).new(item_params) (&& item.save getting rid of this made it work)
-    @item = Item.create_with(user: current_user).new(item_params) 
+    @item = Item.create_with(user: current_user).new(item_params)
 
     respond_to do |format|
       if @item.save
@@ -78,6 +86,7 @@ class ItemsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_item
       @item = Item.find(params[:id])
+     # authorize @item
     end
 
     # Only allow a list of trusted parameters through.
