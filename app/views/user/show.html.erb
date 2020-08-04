@@ -5,15 +5,8 @@
 <p><%= user.about_farm %></p>
 
  <div class="itemhols">
- <p>Price <%= number_to_currency(@item.price, :unit => "€") %>
- <br>
- Category: <%= @item.category %>
-<br>
- shelf_life: <%= @item.shelf_life %></p>
-<br>
- county: <%= @item.county %></p>
- <br>
-  farm: <%= @item.farm %></p>
+<p><%= user.farm_type %></p>
+<p><%= user.county %></p>
  <p>
  <%= link_to 'Back', items_path, :class => "button", :role => "button" %>
         <li><%= link_to 'Back', farmers_path, :class => "button", :role => "button" %>
