@@ -5,20 +5,20 @@
 
  <% @items.each do |item| %>
  <div class="itemhols">
- <h1><%= item.title %></h1>
+  <h1><%= item.title %></h1>
 
- <%= link_to (image_tag item.image_url, :class => "itemholsIm"), item %>
- <p><%= item.description %></p>
- <p>Price <%= number_to_currency(item.price, :unit => "€") %>
- <br>
- Category: <%= item.category %>
- <br>
- shelf_life: <%= item.shelf_life %></p>
-<br>
- county: <%= item.county %></p>
- <br>
-  farm: <%= item.farm %></p>
- <p>
+  <%= link_to (image_tag item.image_url, :class => "itemholsIm"), item %>
+       <p><%= item.description %></p>
+       <p>Price <%= number_to_currency(item.price, :unit => "€") %>
+       <br>
+       Category: <%= item.category %>
+       <br>
+       shelf_life: <%= item.shelf_life %></p>
+       <br>
+       county: <%= item.county %></p>
+       <br>
+       farm: <%= item.farm %></p>
+       <p>
  <%= link_to 'Show', item, :class => "button", :role => "button" %>
 
  <a href="/cart/<%= item.id %>" class="button">Add To Cart</a>
@@ -33,8 +33,33 @@
 =end%>
 
 
+              <%
+=begin%>
+ <% if item_owner? %> 
+<%
+=end%>
 
-        <% if is_farmer? %>
+              
+ <%
+=begin%>
+ <% if is_farmer? %>   
+<%
+=end%>
+
+            
+ <%
+=begin%>
+ <% if @current_user.id == item.user.id %>  
+<%
+=end%>
+
+              <%
+=begin%>
+ <% user_signed_in? && current_user.id == @item.user.id %> 
+<%
+=end%>
+
+        <% if is_farmer? && current_user.id == item.user_id %> 
         <%= link_to 'Edit', edit_item_path(item), :class =>"button", :role=>"button" %>
         <%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' }, :class =>"button", :role=>"button" %>
         
@@ -44,7 +69,8 @@
  </p>
 
  </div>
- <% end %>
+  <% end %> 
+
 
 </div>
 <br>
