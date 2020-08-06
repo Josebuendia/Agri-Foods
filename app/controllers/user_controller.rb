@@ -17,7 +17,7 @@ class UserController < ApplicationController
         #iteration for farmers page
     def farmers
         #@users = User.where(role: 1)
-        @users = User.select(:id, :farm_name, :avatar, :about_farm, :farm_type, :county).where(role: 1)
+        @users = User.select(:id, :farm_name, :about_farm, :farm_type, :county).where(role: 1)
     end
 
     def search
@@ -33,14 +33,6 @@ class UserController < ApplicationController
           # FIXME get the view working for the farmers page
     #end
 
-    def upgrade_admin
-        @user.update_attribute(:adminrole, true)
-        redirect_to :action => :admin_users
-    end
-    
-    def downgrade_admin
-       @user.update_attribute(:adminrole, false)
-         redirect_to :action => :admin_users
-    end    
+   
 
 end
