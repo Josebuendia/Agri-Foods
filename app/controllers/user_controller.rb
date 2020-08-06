@@ -17,7 +17,7 @@ class UserController < ApplicationController
         #iteration for farmers page
     def farmers
         #@users = User.where(role: 1)
-        @users = User.select(:farm_name, :farmers_picture, :about_farm, :farm_type, :county).where(role: 1)
+        @users = User.select(:id, :farm_name, :avatar, :about_farm, :farm_type, :county).where(role: 1)
     end
 
     def search

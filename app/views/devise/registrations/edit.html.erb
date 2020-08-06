@@ -39,10 +39,19 @@
  <%= f.text_field :farm_name %>
 </div>
 
-   <div class="field">
+   <%
+=begin%>
+ <div class="field">
 <%= f.label :farm_image_url %> 
  <%= f.text_field :farmers_picture %>
-</div>
+</div> 
+<%
+=end%>
+
+ <div class="field">
+<%= f.label :farm_image %> 
+ <%= f.file_field :avatar %>
+</div> 
 
    <div class="field">
 <%= f.label :about %> 

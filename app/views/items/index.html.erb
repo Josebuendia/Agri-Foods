@@ -7,7 +7,32 @@
  <div class="itemhols">
   <h1><%= item.title %></h1>
 
-  <%= link_to (image_tag item.image_url, :class => "itemholsIm"), item %>
+<%
+=begin%>
+ <%= link_to (image_tag item.image, :class => "itemholsIm"), item %> 
+<%:class => "itemholsIm
+=end%>
+
+ <%
+=begin%>
+ <%= image_tag item.image.variant(resize: "200x200").processed if item.image.attached? %>  
+<%
+=end%>
+
+<%
+=begin%>
+ 
+<% if item.image.attached? %>
+	<image src="<%=(url_for(item.image)) %>">
+<% end %> 
+<%
+=end%>
+
+<% if item.image.attached? %> 
+       <image src="<%=(url_for(item.image)) %>" class="itemholsIm">
+<% end %>
+
+
        <p><%= item.description %></p>
        <p>Price <%= number_to_currency(item.price, :unit => "€") %>
        <br>
@@ -40,11 +65,13 @@
 =end%>
 
               
+
  <%
 =begin%>
- <% if is_farmer? %>   
+ <% if is_farmer? %>    
 <%
 =end%>
+
 
             
  <%
@@ -53,13 +80,17 @@
 <%
 =end%>
 
-              <%
+
+ <%
 =begin%>
- <% user_signed_in? && current_user.id == @item.user.id %> 
+ <% user_signed_in? && current_user.id == @item.user.id %>  
 <%
 =end%>
 
-        <% if is_farmer? && current_user.id == item.user_id %> 
+
+        
+ <% if is_farmer? && current_user.id == item.user_id %>  
+
         <%= link_to 'Edit', edit_item_path(item), :class =>"button", :role=>"button" %>
         <%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' }, :class =>"button", :role=>"button" %>
         
@@ -69,7 +100,9 @@
  </p>
 
  </div>
-  <% end %> 
+  
+ <% end %>  
+
 
 
 </div>

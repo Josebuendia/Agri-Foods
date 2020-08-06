@@ -25,7 +25,8 @@ gem 'jbuilder', '~> 2.7'
 gem 'devise', git: 'https://github.com/plataformatec/devise' #, ref: '88e9a85'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
-
+#For image variants
+gem "mini_magick"
 #A role enforcing gem
 gem "pundit"
 

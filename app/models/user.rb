@@ -11,5 +11,8 @@ class User < ApplicationRecord
     
      has_many :orders
      has_many :item
+    #image attachment
+     has_one_attached :avatar
+
 
 end

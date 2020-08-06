@@ -27,10 +27,19 @@
     <%= form.text_field :price, id: :item_price, :type =>"text" %>
   </div>
 
-  <div class="field">
+  <%
+=begin%>
+ <div class="field">
     <%= form.label :image_url %>
     <%= form.text_field :image_url, id: :item_image_url %>
-  </div>
+  </div> 
+<%
+=end%>
+
+ <div class="field">
+    <%= form.label :item_photo %>
+    <%= form.file_field :image, id: :image %>
+  </div>   
 
   <div class="field">
     <%= form.label :shelf_life %>
