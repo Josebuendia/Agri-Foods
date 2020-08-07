@@ -1,0 +1,4 @@
+picture_one:
+    name: image
+    record: one (Item)
+    blob: freds_picture_blob
