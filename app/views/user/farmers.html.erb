@@ -29,9 +29,13 @@
 	<image src="<%=(url_for(user.avatar))%>" class="itemholsIm">
 <% end %>
 
-<p><%= user.about_farm %></p>
-<p><%= user.farm_type %></p>
-<p><%= user.county %></p>
+<p><%= user.about_farm %>
+<br>
+<br>
+Farm type:<%= user.farm_type %>
+<br>
+
+Location:<%= user.county %></p>
 
 
  <%
