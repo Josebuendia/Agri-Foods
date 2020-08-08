@@ -187,7 +187,8 @@ display: inline-block
    
    }
    .button {
-    background-color: grey;
+   /* background-color: grey;*/
+   background-color: #C0C0C0;
     border: none;
     color: white;
     padding: 15px 32px;
@@ -242,7 +243,6 @@ display: inline-block
     color: white;
    }
 
-   /*Still not working, might  need to get rid of it*/
    #onTickContents{
    display:none;
     }

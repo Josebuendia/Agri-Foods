@@ -1,6 +1,6 @@
 <div id="itemsContainer">
     <h1>Thank You<br>
-You have just placed an order <%=@order.id%></h1>
+You have just placed an order. Order id: <%=@order.id%></h1>
 </div>
 <table id="customers">
     <tr>
@@ -33,10 +33,10 @@ You have just placed an order <%=@order.id%></h1>
         
        <td>Order Total: &euro; <%= @total %></td>
        
-<% shipping = 30 %>
+<% shipping = 5 %>
       <% @overall = shipping + @total%>
       <tr>
-          <td>Shipping &euro;30</td>
+          <td>Shipping &euro;5</td>
           <td>You Pay &euro; <%= @overall %></td>
       </tr>
 <tr>

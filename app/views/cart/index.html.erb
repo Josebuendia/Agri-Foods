@@ -21,7 +21,21 @@
          <tr>
             <td>
                <div class="image">
-                    <%= link_to (image_tag item.image_url, :style =>"height:40px"), item %>
+               <!--Need to change the below line-->
+                    <%
+=begin%>
+ <%= link_to (image_tag item.image_url, :style =>"height:40px"), item %> 
+<%
+=end%>
+       <%
+=begin%>
+ <image src="<%=(url_for(item.image)) %>" class="itemholsIm"> 
+<%
+=end%>
+
+<% if item.image.attached? %> 
+       <image src="<%=(url_for(item.image)) %>" style ="height:40px">
+<% end %>
                 </div>
 
                 </td>
