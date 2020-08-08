@@ -16,7 +16,7 @@ amazon:
    #secret_access_key: <%= Rails.application.credentials.dig(:aws, :secret_access_key => ENV['S3_SECRET']) %>
    #secret_access_key: <%= Rails.application.credentials.dig(:aws, :secret_access_key) %>
    #region: us-east-1
-   region: EU (Ireland)
+   region: eu-west-1
    bucket: agrifood.bucket
 
 # Remember not to checkin your GCS keyfile to a repository
