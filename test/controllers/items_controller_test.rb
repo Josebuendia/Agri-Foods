@@ -1,5 +1,6 @@
 require 'test_helper'
 
+
 class ItemsControllerTest < ActionDispatch::IntegrationTest
  # @image_image = fixture_path(Rails.root.join('test', 'fixtures', 'files', 'burger.jpg'),'image/jpg')
   setup do
@@ -21,7 +22,7 @@ class ItemsControllerTest < ActionDispatch::IntegrationTest
     assert_difference('Item.count') do
       post items_url, params: { item: { category: @item.category, county: @item.county, description: @item.description, farm: @item.farm,
         # image_image: image_image, price: @item.price, shelf_life: @item.shelf_life, title: @item.title } }
-         image: @item.image, price: @item.price, shelf_life: @item.shelf_life, title: @item.title } }
+          price: @item.price, shelf_life: @item.shelf_life, title: @item.title } }
     end
 
     assert_redirected_to item_url(Item.last)
