@@ -8,8 +8,10 @@
  <%= link_to (image_tag item.image_url, :style => "height:100px"), item %> 
 <%
 =end%>
-            <% if item.image.attached? %> 
+     <% if item.image.attached? %> 
+      <%= link_to item  do %> 
        <image src="<%=(url_for(item.image)) %>" class="itemholsIm">
+       <% end %>
 <% end %>
           </div>
           <div class="title">
