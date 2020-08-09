@@ -28,8 +28,20 @@
 <%
 =end%>
 
+      <%
+=begin%>
+ <%= link_to 'Show', item,  <image src="<%=(url_for(item.image)) %>" class="itemholsIm"> 
+<%
+=end%>
+
 <% if item.image.attached? %> 
+  
+ <%= link_to item  do %> 
+
        <image src="<%=(url_for(item.image)) %>" class="itemholsIm">
+      
+ <% end %> 
+
 <% end %>
 
 
