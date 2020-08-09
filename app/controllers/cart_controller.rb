@@ -18,31 +18,26 @@ class CartController < ApplicationController
     else
      cart[id] = cart[id] - 1
     end
-     #takes us to cart index[view] page
     redirect_to :action => :index
 
   end
 
 
   def clearCart
-    #this sets session variable to nil and brings user back to index
     session[:cart] = nil
     redirect_to :action => :index
   end
 
   def add
-    # this gets the Id of the product
     id = params[:id]
 
-    # where the cart is already been created, use the existing cart else create a blank cart
   if session[:cart] then
     cart = session[:cart]
   else
     session[:cart] = {}
     cart = session[:cart]
   end
-  #In the case where the product is has already been added it increments by 1 
-  #else product is set to 1
+ 
   if cart[id] then
     cart[id] = cart[id] + 1
   else
@@ -53,7 +48,7 @@ class CartController < ApplicationController
 
   end
   def index
-    # passes a cart to display
+    # displays a cart
     if session[:cart] then
       @cart = session[:cart]
     else
@@ -67,7 +62,7 @@ class CartController < ApplicationController
    @order = @user.orders.build(:order_date => DateTime.now, :status => 'Pending')
    @order.save
 
-   @cart = session[:cart] || {} # Get the contents of the Cart
+   @cart = session[:cart] || {} 
    @cart.each do | id, quantity |
       item = Item.find_by_id(id)
       @orderitem = @order.orderitems.build(:item_id => item.id, :title => item.title, :description => item.description, :quantity => quantity, :price=> item.price)
