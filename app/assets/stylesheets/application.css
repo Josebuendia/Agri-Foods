@@ -115,7 +115,6 @@ footer-box-right{
 }
 
 .container {
-      /*  background: url("/assets/Site/.png");*/
          background-repeat:no-repeat;
          background-position:right bottom;
          width: 100%;
@@ -133,7 +132,7 @@ footer-box-right{
 display: inline-block
 }
 
-/*Items CSS*/
+/*Items CSS & other stuff fetched  from DB*/
 
 #itemsContainer {
     width: 100%;
