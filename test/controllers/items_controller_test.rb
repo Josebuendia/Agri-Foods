@@ -20,9 +20,9 @@ class ItemsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create item" do
     assert_difference('Item.count') do
-      post items_url, params: { item: { category: @item.category, county: @item.county, description: @item.description, farm: @item.farm,
+      post items_url, params: { item: { category: 'Meat', county: 'Wicklow', description: 'Delicious beef', farm: 'Glen Vally Farm',
         # image_image: image_image, price: @item.price, shelf_life: @item.shelf_life, title: @item.title } }
-          price: @item.price, shelf_life: @item.shelf_life, title: @item.title } }
+          price: 20, shelf_life: '15 days', title: 'Beef' } }
     end
 
     assert_redirected_to item_url(Item.last)
