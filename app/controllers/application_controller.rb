@@ -9,4 +9,7 @@ class ApplicationController < ActionController::Base
         end
     end
       helper_method :is_farmer?
+
+   
+
 end
