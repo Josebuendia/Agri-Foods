@@ -2,7 +2,6 @@ require "application_system_test_case"
 
 class ItemsTest < ApplicationSystemTestCase
   setup do
-    @user = users(:one)
     @item = items(:one)
   end
 
