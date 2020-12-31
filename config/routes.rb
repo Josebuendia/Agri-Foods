@@ -16,10 +16,7 @@ Rails.application.routes.draw do
 
   devise_for :users, controllers: {
     registrations: 'users/registrations'
-
-    }
-
-
+  }
 
   get '/checkout' => 'cart#createOrder'
   get '/paid/:id' => 'static_pages#paid'

@@ -3,6 +3,9 @@ require "application_system_test_case"
 class OrdersTest < ApplicationSystemTestCase
   setup do
     @order = orders(:one)
+  #  sign_in(:one)
+  @user = users(:one)
+  log_in_as (:one)
   end
 
   test "visiting the index" do

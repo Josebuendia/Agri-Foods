@@ -3,6 +3,9 @@ require "application_system_test_case"
 class ItemsTest < ApplicationSystemTestCase
   setup do
     @item = items(:one)
+    gets '/users/sign_in'
+    #sign_in(@user)
+    sign_in(:one)
   end
 
   test "visiting the index" do
