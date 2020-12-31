@@ -6,6 +6,7 @@
 #
 default: &default
   adapter: sqlite3
+  encoding: unicode
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   timeout: 5000
 
@@ -20,6 +21,7 @@ test:
   <<: *default
   database: db/test.sqlite3
 
+# copied from: https://devcenter.heroku.com/articles/getting-started-with-rails6
 production:
   <<: *default
-  database: db/production.sqlite3
+  url: <%= ENV['DATABASE_URL'] %>
